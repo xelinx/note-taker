@@ -6,7 +6,7 @@ module.exports = function (app) {
 
     //API Get
     app.get("/api/notes", function (req, res) {
-        var notesData = JSON.parse(fs.readFile("db/db", "utf8"));
+        var notesData = JSON.parse(fs.readFile("/db/db.json", "utf8"));
 
         // reads from json file
         res.json(notesData);
@@ -14,11 +14,11 @@ module.exports = function (app) {
     
     //API Post
     app.post("/api/notes", function (req, res) {
-        var notesData = JSON.parse(fs.readFile("db/db", "utf8"));
+        var notesData = JSON.parse(fs.readFile("/db/db.json", "utf8"));
 
         // Receives a new note, adds it to db.json, then returns the new note
         notesData.push(req.body);
-        fs.writeFileSync("db/db", JSON.stringify(notesData));
+        fs.writeFileSync("/db/db.json", JSON.stringify(notesData));
         
         return console.log("Added: "+req.body.title);   
  //       res.json(notesData);     
@@ -31,11 +31,11 @@ module.exports = function (app) {
 
     //API Delete
     app.delete("/api/notes:id", function (req, res) {
-        var notesData = JSON.parse(fs.readFile("db/db", "utf8"));
+        var notesData = JSON.parse(fs.readFile("/db/db.json", "utf8"));
 
         notesData.splice(req.params.id, 1);
 
-        fs.writeFileSync("db/db", JSON.stringify(notesData));
+        fs.writeFileSync("/db/db.json", JSON.stringify(notesData));
 
     });
     
