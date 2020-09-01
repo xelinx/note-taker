@@ -1,5 +1,7 @@
 # note-taker
+Create the backend to an application that can write, save, and delete notes. Express will be used and notes will be saved and retrieved using JSON.
 
+This assignment already has the frontend developed. I was able to get the server running and display the first page of the application, but when I click the button to "Get Started" on the index.html page, it does not redirect the app to notes.html. I'm a bit frustrated because I keep checking over my code but I cannot seem to find what's wrong. Also, the app functions when I go to localhost:8080, however when I check Heroku, the app is not deployed to show at least the initial functioning page. 
 
 ## Table of Contents
   - [Installation](#installation)
