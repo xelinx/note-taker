@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 8080;
 
 //Parsing
 app.use(express.urlencoded({ extended: true}));
-applicationCache.use(express.json());
+app.use(express.json());
+app.use(express.static(__dirname));
 
 //Routes
 require ("./routes/routes")(app);
